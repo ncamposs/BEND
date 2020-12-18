@@ -2,9 +2,27 @@ import express from 'express'
 import morgan from 'morgan'
 import cors from 'cors'
 import path from 'path'
+import mongoose from 'mongoose'
 
 
 const app = express();
+const uri = 'mongodb://localhost:27017/Bend';
+
+const options = {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+}
+
+//Conexion a Mongodb
+mongoose.connect(uri, options).then ( 
+    () => {
+        console.log('Connect to Mongodb')
+    },
+    err => {
+        err
+    }
+)
 
 //middleware
 app.use(morgan('tiny'));
