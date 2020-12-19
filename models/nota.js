@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const notaSchema = new Schema ({
-        name: {
+        nombre: {
             type: String,
             require: [true, 'obligatorio']
         },
@@ -10,12 +10,12 @@ const notaSchema = new Schema ({
             type:   String,
             required: true
         },
-        UsuarioId: {
+        usuarioId: {
             type: String
         },
         date: {
             type: Date,
-            default: DateNow
+            default: Date
         },
         activo: {
             type: Boolean,
